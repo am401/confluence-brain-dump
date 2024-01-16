@@ -32,12 +32,12 @@ def updatePage(url,pageid,payload):
 
 # Loop to get multi line user input for payload
 # Can accept markdown
-print("Enter/Paste your content. Ctrl-C once done editing:")
+print("Enter/Paste your content. Ctrl-D once done editing:")
 contents = []
 while True:
     try:
         line = input()
-    except KeyboardInterrupt:
+    except EOFError:
         break
     contents.append(markdown.markdown(line))
 
